@@ -1,0 +1,137 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-image: url('../images/office-black-leather-workspace-with-office-supplies-flat-lay-copy-space_953680-44828.jpg');
+    background-size: cover;
+    height: 100vh;
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+
+    backdrop-filter: blur(2px); /* Add blur effect */
+    z-index: 1;
+}
+
+@keyframes slideFromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container {
+    width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    animation: slideFromTop 0.8s ease-in-out; /* Apply slide from top animation */
+}
+
+.header h1 {
+    color: #333333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.input-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #dddddd;
+    border-radius: 5px 0 0 5px;
+    font-size: 16px;
+}
+
+.input-group button {
+    padding: 10px;
+    background-color: #5c1e0c;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.input-group button:hover {
+    background-color: #5c1e0c;
+}
+
+#task-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 50px; /* Add some margin to separate from the image */
+    position: relative;
+    z-index: 3; /* Ensure the To-Do List items are above the image */
+    background-color: rgba(255, 255, 255, 0.5); /* Set a transparent background color */
+}
+
+#task-list li {
+    background-color: rgba(255, 255, 255, 0.8); /* Set a transparent background color for list items */
+    border: 1px solid #dddddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+#task-list li.completed {
+    text-decoration: line-through;
+}
+
+#task-list li span {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#task-list li .actions {
+    display: flex;
+    gap: 10px;
+}
+
+#task-list li .actions i {
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+#task-list li .actions .complete-task {
+    color: #4caf50;
+}
+
+#task-list li .actions .delete-task {
+    color: #5c1e0c;
+}
+
+#task-list li .actions i:hover {
+    color: #5c1e0c;
+}
